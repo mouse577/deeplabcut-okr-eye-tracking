@@ -86,11 +86,21 @@ This workflow was developed for quantitative analysis of mouse eye movements dur
 
 ## Example Output
 
-The pipeline produces quantitative visualizations of eye position, movement, and pupil geometry from DeepLabCut tracking results.
+These examples show how DeepLabCut landmark predictions are converted into pupil position, frame-to-frame displacement, and pupil diameter measurements across three recordings.
 
-![Eye tracking and pupil analysis](eye_tracking_summary_plots.png)
+### Recording 1
 
-Abrupt excursions in the traces can indicate low-confidence or erroneous landmark detections, motivating the pipeline's quality-control, problematic-frame extraction, and iterative retraining steps.
+![Eye-tracking analysis, recording 1](eye_tracking_page_6.png)
+
+### Recording 2
+
+![Eye-tracking analysis, recording 2](eye_tracking_page_8.png)
+
+### Recording 3
+
+![Eye-tracking analysis, recording 3](eye_tracking_page_9.png)
+
+Abrupt spikes or shifts may reflect tracking errors and should be reviewed alongside landmark confidence and labeled video. The quality-control and frame-extraction tools in this repository support that review.
 
 ### Measurements shown
 
