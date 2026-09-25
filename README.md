@@ -10,7 +10,7 @@ Quantifying eye movements from experimental video can require substantial manual
 
 The overall workflow is:
 
-**Experimental video → DeepLabCut pose estimation → keypoint extraction → confidence/quality control → eye and pupil measurements → quantitative visualization**
+**Experimental video → DeepLabCut pose estimation → landmark coordinates & confidence scores → quality control → pupil position & geometry → eye-movement metrics → quantitative visualization**
 
 ## Key Features
 
@@ -86,12 +86,20 @@ This workflow was developed for quantitative analysis of mouse eye movements dur
 
 ## Example Output
 
-Example eye-tracking summary plots are included in:
+The pipeline produces quantitative visualizations of eye position, movement, and pupil geometry from DeepLabCut tracking results.
 
-`eye_tracking_summary_plots.pdf`
+![Eye tracking and pupil analysis](eye_tracking_summary_plots.png)
 
-These visualizations summarize eye-movement and pupil measurements generated from DeepLabCut tracking output.
+Abrupt excursions in the traces can indicate low-confidence or erroneous landmark detections, motivating the pipeline's quality-control, problematic-frame extraction, and iterative retraining steps.
 
+### Measurements shown
+
+- **Pupil center position (X/Y):** tracks the estimated pupil center across video frames.
+- **Eye movement / displacement:** quantifies frame-to-frame changes in pupil position.
+- **Horizontal and vertical pupil diameter:** measures pupil geometry from tracked landmarks.
+- **Average pupil diameter:** summarizes pupil size across the recording.
+
+These measurements provide a quantitative representation of eye movement and pupil dynamics derived from pose-estimation output and can be used for downstream analysis of optokinetic responses and experimental conditions.
 ## Installation
 
 Install the Python dependencies with:
